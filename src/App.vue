@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import TodoList from "./test/todolist/TodoList";
+    import Computer from "./test/vuex/Computer";
+    // import Father from "./test/custom/Father";
+    import BusTest1 from "./test/bus/BusTest1";
+    import BusTest2 from "./test/bus/BusTest2";
+    import Transi from "./test/transition/Transi";
+    import ReqShow from "./test/req/ReqShow";
+    import Father from "./test/slot/Father";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            TodoList, Father, BusTest1, BusTest2, Transi, ReqShow, Computer
+        },
+    }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang="stylus">
+
 </style>
