@@ -4,7 +4,11 @@
  * @description:
  */
 
+// 代理请求路径
 export const BASE_URL = "http://localhost:8080";
+
+// ele图片资源请求地址
+export const ELE_URL = "https://fuss10.elemecdn.com/";
 
 export const RoutesComputed = {
     HOME() {

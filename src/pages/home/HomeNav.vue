@@ -68,6 +68,8 @@
     };
 </script>
 <style scoped lang="stylus">
+    .app-container
+        margin-top 100px
     #mySwiper
         width 100vw
         height 400px

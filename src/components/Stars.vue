@@ -12,10 +12,10 @@
             generateStars() {
                 let rating = this.rating;
                 let arr = [];
-                while (rating > 0) {
-                    if (rating > 1) {
+                while (rating >= 0) {
+                    if (rating >= 1) {
                         arr.push("on");
-                    } else if (rating > 0.5) {
+                    } else if (rating >= 0.5) {
                         arr.push("half");
                     } else {
                         arr.push("off");

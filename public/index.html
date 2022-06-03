@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<!--    <%= BASE_URL %> 为vue解析的内部基础路径，使用后可以快速定位到当前文件夹-->
+    <!--    <%= BASE_URL %> 为vue解析的内部基础路径，使用后可以快速定位到当前文件夹-->
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" href="<%= BASE_URL %>css/reset.css">
-<!--    // 引入阿里图标库-->
+    <!--    // 引入阿里图标库-->
     <link rel="stylesheet" href="//at.alicdn.com/t/font_3436865_tik5v2dpmtd.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
 
-    <div id="app"></div>
-  </body>
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"></div>
+</body>
 </html>

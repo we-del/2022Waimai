@@ -4,7 +4,9 @@
         <template v-for="(merchant,index) in merchantMessage">
             <Merchant>
                 <template v-slot:logo>
-                    <img :src="require(`@/common/img/shop/${(index%4)+1}.jpg`)" alt="merchant-logo">
+
+                    <img :src="url+merchant.image_path" alt="merchant-logo">
+<!--                    <img :src="require(`@/common/img/shop/${(index%4)+1}.jpg`)" alt="merchant-logo">-->
                 </template>
                 <template v-slot:detail>
                     <span class="brand">品牌</span>
@@ -38,6 +40,7 @@
     import Merchant from "@/components/Merchant";
     import Stars from "@/components/Stars";
     import {POSITION, POSITION_STATE, MERCHANT_LIST, MERCHANT_STATE, SAVE_MERCHANT} from "@/store/config";
+    import {ELE_URL} from "@/config";
     import {getMerchantList} from "@/api/req/home/homePageReq";
 
     const {LATITUDE, LONGITUDE} = POSITION_STATE;
@@ -46,12 +49,20 @@
         name: "MerchantList",
         mounted() {
             this.getMerchantList();
+            console.log(url+this[MERCHANT_MESSAGE][0].image_path)
+        },
+        data(){
+          return {url:ELE_URL};
         },
         components: {
             Merchant, Stars
         },
         methods: {
             ...mapActions(MERCHANT_LIST, [SAVE_MERCHANT]),
+            
+            /**
+              @description: 获取商铺列表
+            */
             async getMerchantList() {
                 let {code, data} = await getMerchantList({
                     [LATITUDE]: this.LATITUDE,
@@ -76,6 +87,7 @@
         width 100vw
         padding: 10px
         color #a5a5a5
+        margin-bottom 100px
 
     .icon-gap
         margin-right 5px
