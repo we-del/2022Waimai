@@ -5,34 +5,13 @@
  */
 
 import VueRouter from "vue-router";
-
-import Home from "../pages/Home";
-import Search from "../pages/Search";
-import YourProfile from "../pages/YourProfile";
-import Order from "../pages/Order";
+import projectRouter from "@/router/projectRouter";
+import testRouter from "@/router/testRouter";
 const router = new VueRouter({
     mode:"history",
     routes: [
-        {
-            name:"home",
-            path: "/home",
-            component: Home
-        },
-        {
-            name:"search",
-            path:"/search",
-            component: Search
-        },
-        {
-            name:"yourprofile",
-            path:"/yourprofile",
-            component: YourProfile,
-        },
-        {
-            name:"order",
-            path: "/order",
-            component: Order
-        },
+        ...projectRouter,
+        ...testRouter,
         {
             path:"/",
             redirect:"/home"

@@ -50,7 +50,8 @@
         position fixed
         bottom 0
         left 0
-
+        z-index 888
+        background-color white
         ul
             top-border-1px($bc)
             display flex

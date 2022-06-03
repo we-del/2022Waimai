@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    import Guide from "../components/Guide";
+    import Guide from "../../components/Guide";
     import {RoutesComputed} from "@/config";
     let {SEARCH} = RoutesComputed;
     export default {

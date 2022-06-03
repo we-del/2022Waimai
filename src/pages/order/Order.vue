@@ -1,19 +1,19 @@
 <template>
     <div>
-        <h1>我的信息</h1>
-        <Guide :cur-page="YOUR_PROFILE"/>
+        <h1>order Page</h1>
+        <Guide :cur-page="ORDER"/>
     </div>
 </template>
 
 <script>
-    import Guide from "../components/Guide";
+    import Guide from "../../components/Guide";
     import {RoutesComputed} from "@/config";
-    let {YOUR_PROFILE} = RoutesComputed;
+    let {ORDER} = RoutesComputed;
     export default {
-        name: "YourProfile",
+        name: "Order",
         components: {Guide},
         computed:{
-            YOUR_PROFILE
+            ORDER
         }
     }
 </script>

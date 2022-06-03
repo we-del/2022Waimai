@@ -15,5 +15,8 @@ module.exports={
                 "@components":path.resolve(__dirname,"src/components") // 给components目录起别名@components
             }
         }
+    },
+    devServer:{
+        "proxy":"http://localhost:4000"
     }
 }
