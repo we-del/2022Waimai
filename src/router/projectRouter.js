@@ -8,6 +8,7 @@ import Home from "@/pages/home/Home";
 import Search from "@/pages/search/Search";
 import YourProfile from "@/pages/yourProfile/YourProfile";
 import Order from "@/pages/order/Order";
+import Login from "@/pages/login/Login";
 
 export default [
     {
@@ -30,4 +31,9 @@ export default [
         path: "/order",
         component: Order
     },
+    {
+        name:"login",
+        path: "/login",
+        component: Login
+    }
 ]

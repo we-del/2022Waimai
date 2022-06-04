@@ -49,7 +49,6 @@
         name: "MerchantList",
         mounted() {
             this.getMerchantList();
-            console.log(url+this[MERCHANT_MESSAGE][0].image_path)
         },
         data(){
           return {url:ELE_URL};

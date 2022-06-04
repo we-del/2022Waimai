@@ -1,37 +1,35 @@
 <template>
-    <div id="nav-header-bar">
-        <header class="nav-header">
-            <div class="nav-search icon-sousuo iconfont"></div>
-            <div class="nav-address">{{name}}</div>
-            <div class="nav-login-or-register">登录|注册</div>
-        </header>
+    <div>
+        <slot name="home"></slot>
+        <slot name="search"></slot>
+        <slot name="order"></slot>
+        <slot name="profile"></slot>
     </div>
+
 </template>
 
 <script>
-    import {mapState,mapActions} from "vuex";
+    import {mapActions} from "vuex";
     import {getPositionReq} from "@/api/req/home/homePageReq";
-    import {SAVE_POSITION,POSITION} from "@/store/config";
+    import {SAVE_POSITION, POSITION} from "@/store/config";
+
     export default {
-        name: "HomeHeader",
-        computed:{
-            ...mapState(POSITION,["name"]),
-        },
+        name: "CommonHeader",
         methods: {
             /**
-              @description: 存储位置信息到store中
-            */
+             @description: 存储位置信息到store中
+             */
             async getPosition() {
                 console.log(this);
                 let {data} = await getPositionReq();
-                if(!data.code){
+                if (!data.code) {
                     console.log(data);
                     this[SAVE_POSITION](data.data)
-                }else{
+                } else {
                     alert("网络错误，请稍后再试");
                 }
             },
-            ...mapActions(POSITION,[SAVE_POSITION]),
+            ...mapActions(POSITION, [SAVE_POSITION]),
         },
         mounted() {
             this.getPosition();
@@ -40,12 +38,19 @@
 </script>
 
 <style scoped lang="stylus">
-    @import "../../common/mixins.styl";
+    @import "../common/mixins.styl";
+    .title
+        text-align center
+        font-size 40px
+        line-height 100px
+        color white
+        background-color $green
     #nav-header-bar
         position fixed
         left 0
         top 0
         z-index 999
+
     .nav-header
         display flex
         width 100vw
